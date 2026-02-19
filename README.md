@@ -1,23 +1,12 @@
 # Pelumi's Playground
 
-A personal project showcase site with a light, centered layout. Projects are driven by a markdown file so you can add or edit entries without touching the code.
+A personal project showcase smy list of AI tools i've built.
 
-## View on GitHub
+View here:
 
-After you push this repo to GitHub, your repo URL will be:
+- **HTTPS:** `https://github.com/p31umi/Playground`
 
-- **HTTPS:** `https://github.com/YOUR_USERNAME/Playground`
-- **Clone:** `https://github.com/YOUR_USERNAME/Playground.git`
 
-Replace `YOUR_USERNAME` with your GitHub username. To open it: run `gh repo view --web` from this folder (if you use GitHub CLI), or go to **github.com** → Your profile → **Repositories** → **Playground**.
-
-## Run locally
-
-1. Open the project folder in a terminal.
-2. Serve the files (e.g. with Python or Node):
-   - **Python 3:** `python3 -m http.server 8000` then open http://localhost:8000
-   - **Node (npx):** `npx serve` then open the URL it prints
-3. Or open `index.html` directly in a browser (some features may be limited without a server).
 
 ## Adding or editing projects
 
