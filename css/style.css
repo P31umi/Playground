@@ -1,6 +1,6 @@
 /* --- Variables (light theme per design) --- */
 :root {
-  --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-sans: 'Roboto Mono', ui-monospace, monospace;
   --container-max: 1100px;
   --padding-x: clamp(1rem, 5vw, 2rem);
   --section-padding: clamp(3rem, 8vw, 5rem);
@@ -32,7 +32,9 @@ body {
   font-size: clamp(1rem, 2vw, 1.0625rem);
   line-height: 1.5;
   color: var(--color-text);
-  background: var(--color-bg-fallback);
+  background-color: #ffffff;
+  background-image: linear-gradient(#e3e3e3 1px, transparent 1px), linear-gradient(to right, #e3e3e3 1px, #ffffff 1px);
+  background-size: 20px 20px;
   min-height: 100vh;
   overflow-x: hidden;
   max-width: 100vw;
@@ -46,7 +48,10 @@ body {
   width: 100%;
   height: 100%;
   z-index: -1;
-  background: var(--color-bg-fallback);
+  background-color: #ffffff;
+  opacity: 0.8;
+  background-image: linear-gradient(#f0f0f0 1px, transparent 1px), linear-gradient(to right, #f0f0f0 1px, #ffffff 1px);
+  background-size: 20px 20px;
 }
 
 /* --- Centered wrapper --- */
@@ -267,7 +272,7 @@ body {
   padding: 1.5rem;
   background: var(--color-card-bg);
   border: 1px solid var(--color-card-border);
-  border-radius: 12px;
+  border-radius: 0;
   transition: transform 0.25s var(--transition-ease),
     box-shadow 0.25s var(--transition-ease),
     opacity 0.25s var(--transition-ease);

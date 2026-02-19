@@ -5,6 +5,9 @@
   const REDUCED_MOTION_QUERY = '(prefers-reduced-motion: reduce)';
   const DESKTOP_ONLY_QUERY = '(min-width: 768px)';
 
+  /** Switch background: 'dots' or 'clouds' */
+  const VANTA_BACKGROUND = 'dots';
+
   let vantaEffect = null;
 
   function prefersReducedMotion() {
@@ -16,8 +19,42 @@
   }
 
   function initVanta() {
-    /* Disabled for light-theme design; background uses CSS fallback only. */
-    return;
+    const el = document.getElementById(VANTA_CONTAINER_ID);
+    if (!el || typeof VANTA === 'undefined') return;
+    if (prefersReducedMotion()) return;
+
+    destroyVanta();
+
+    if (VANTA_BACKGROUND === 'clouds' && typeof VANTA.CLOUDS === 'function') {
+      vantaEffect = VANTA.CLOUDS({
+        el: '#' + VANTA_CONTAINER_ID,
+        mouseControls: true,
+        touchControls: true,
+        gyroControls: false,
+        minHeight: 200,
+        minWidth: 200
+      });
+      return;
+    }
+
+    if (typeof VANTA.DOTS === 'function') {
+      vantaEffect = VANTA.DOTS({
+        el: '#' + VANTA_CONTAINER_ID,
+        mouseControls: true,
+        touchControls: true,
+        gyroControls: true,
+        minHeight: 200,
+        minWidth: 200,
+        scale: 1,
+        scaleMobile: 1,
+        color: 0x292929,
+        color2: 0xb0b0b0,
+        backgroundColor: 0xffffff,
+        size: 1.4,
+        spacing: 21,
+        showLines: false
+      });
+    }
   }
 
   function destroyVanta() {
